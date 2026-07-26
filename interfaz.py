@@ -7,7 +7,7 @@ from crud import *
 
 ventana = tk.Tk()
 
-ventana.title("Gestor de Videojuegos")
+ventana.title("Sistema CRUD de Videojuegos")
 
 ventana.geometry("900x550")
 
