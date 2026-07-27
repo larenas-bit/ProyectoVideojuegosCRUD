@@ -8,7 +8,7 @@ from crud import *
 ventana = tk.Tk()
 
 ventana.title("Gestor de Videojuegos")
-
+ventana.configure(bg="#7b9fc7")
 ventana.geometry("900x550")
 
 tk.Label(ventana,text="Título").grid(row=0,column=0,padx=10,pady=5)
