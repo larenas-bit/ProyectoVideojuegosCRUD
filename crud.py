@@ -76,3 +76,23 @@ def actualizar_videojuego(id,titulo,genero,clasificacion,plataforma):
 
     cursor.close()
     conexion.close()
+
+
+def buscar_videojuego(titulo):
+
+    conexion = conectar()
+    cursor = conexion.cursor()
+
+    sql = """
+    SELECT * FROM Videojuegos
+    WHERE Titulo LIKE %s
+    """
+
+    cursor.execute(sql, ("%" + titulo + "%",))
+
+    datos = cursor.fetchall()
+
+    cursor.close()
+    conexion.close()
+
+    return datos
