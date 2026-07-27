@@ -6,7 +6,7 @@ from tkinter import messagebox
 from crud import *
 
 ventana = tk.Tk()
-ventana.configure(bg="#6588A5")
+
 ventana.title("Gestor de Videojuegos")
 
 ventana.geometry("900x550")
