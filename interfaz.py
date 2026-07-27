@@ -7,6 +7,8 @@ from crud import *
 
 ventana = tk.Tk()
 
+ventana.configure(bg="#2D3352")
+tk.Label(ventana, text="Título", bg="#E8F5E9").grid(row=0,column=0,padx=10,pady=5)
 ventana.title("Sistema CRUD de Videojuegos")
 
 ventana.geometry("900x550")
@@ -229,3 +231,8 @@ tabla.bind("<<TreeviewSelect>>",seleccionar)
 cargar()
 
 ventana.mainloop()
+
+
+##Implementacion de Issue a GitHub
+
+
