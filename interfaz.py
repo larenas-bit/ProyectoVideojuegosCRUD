@@ -235,4 +235,25 @@ ventana.mainloop()
 
 ##Implementacion de Issue a GitHub
 
+tk.Label(ventana, text="Buscar").grid(row=4, column=0, padx=10, pady=5)
 
+buscar_entry = tk.Entry(ventana, width=35)
+buscar_entry.grid(row=4, column=1)
+
+def buscar():
+
+    for fila in tabla.get_children():
+        tabla.delete(fila)
+
+    videojuegos = buscar_videojuego(buscar_entry.get())
+
+    for juego in videojuegos:
+        tabla.insert("", tk.END, values=juego)
+
+
+tk.Button(
+    ventana,
+    text="Buscar",
+    command=buscar,
+    width=15
+).grid(row=5, column=4)
