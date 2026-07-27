@@ -45,12 +45,15 @@ tabla.heading("Plataforma",text="Plataforma")
 
 tabla.grid(row=6,column=0,columnspan=5,padx=15,pady=20)
 
-def cargar():
+def cargar(filtro=""):
 
     for fila in tabla.get_children():
         tabla.delete(fila)
 
-    videojuegos=mostrar_videojuegos()
+    if filtro:
+        videojuegos = buscar_videojuego(filtro)
+    else:
+        videojuegos = mostrar_videojuegos()
 
     for juego in videojuegos:
         tabla.insert("",tk.END,values=juego)
@@ -164,6 +167,24 @@ def eliminar():
         limpiar()
 
         messagebox.showinfo("Eliminado","Registro eliminado")
+
+#Buscar por nombre
+
+tk.Label(ventana, text="Buscar por nombre").grid(row=4, column=0, padx=10, pady=5)
+
+buscar_entry = tk.Entry(ventana, width=35)
+buscar_entry.grid(row=4, column=1)
+
+def buscar():
+    cargar(buscar_entry.get().strip())
+
+
+tk.Button(
+    ventana,
+    text="Buscar",
+    command=buscar,
+    width=15
+).grid(row=4, column=2)
 
 #Botones
 
